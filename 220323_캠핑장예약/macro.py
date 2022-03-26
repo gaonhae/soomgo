@@ -42,8 +42,7 @@ if(seatNum < 10):
 URL = 'https://camping.gtdc.or.kr/DZ_reservation/reserCamping_v3.php?xch=reservation&xid=camping_reservation&sdate=20' + yymmInput
 
 
-
-driver = webdriver.Chrome("E:/CODING/@Soomgo/220323_캠핑장예약/chromedriver.exe")
+driver = webdriver.Chrome(executable_path='chromedriver')
 driver.get(url=URL)
 
 driver.implicitly_wait(time_to_wait=5)
