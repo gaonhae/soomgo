@@ -36,20 +36,33 @@ driver = webdriver.Chrome('chromedriver.exe', options=options)
 driver.get(url=URL)
 driver.implicitly_wait(time_to_wait=1000)
 
-#설정한 시간이 될 때까지 대기
-for i in range(1, 999999):
-    date = urllib.request.urlopen(server).headers['Date'][5:-4]
-    hour = date[12:14]
-    min = date[15:17]
-    sec = date[18:]
-    if(sec == '00' and min == '00' and hour == '00'): #시간의 경우 원하는 시간 -9로 설정하면 됨. 지금의 경우 9시를 설정한 결과
-        break
-    print(f'{str(int(hour)+9)}시 {min}분 {sec}초')
 
-driver.refresh()
+#간편로그인
+
+userid = driver.find_element_by_xpath('//*[@id="usrId"]')
+userid.send_keys("31402500")
+
+userpassword = driver.find_element_by_xpath('//*[@id="usrPwd"]')
+userpassword.send_keys('2347812')
+
+
+#설정한 시간이 될 때까지 대기
+#for i in range(1, 999999):
+#    date = urllib.request.urlopen(server).headers['Date'][5:-4]
+#    hour = date[12:14]
+#    min = date[15:17]
+#    sec = date[18:]
+#    if(sec == '00' and min == '00' and hour == '00'): #시간의 경우 원하는 시간 -9로 설정하면 됨. 지금의 경우 9시를 설정한 결과
+#        break
+#    print(f'{str(int(hour)+9)}시 {min}분 {sec}초')
+
 
 #매크로 진행
+driver.refresh()
 
-day = driver.find_element_by_xpath()
+driver.find_element_by_xpath('//*[@id="selectCoIdJ21"]').click()
 
 driver.execute_script("golfConfirm('{}','{}','1','{}','{}','18홀','','','FEEC92C302FE9A58')".format(yymmddInput, editedtime, cosInput, timeInput))
+
+
+
