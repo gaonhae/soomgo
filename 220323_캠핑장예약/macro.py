@@ -66,12 +66,13 @@ for i in range(1, 999999):
     hour = date[12:14]
     min = date[15:17]
     sec = date[18:]
-    if(sec == '00' and min == '00' and hour == '01'):
+    if(sec == '00' and min == '00' and hour == '03'): #시간의 경우 원하는 시간 -9로 설정하면 됨. 지금의 경우 10시를 설정한 결과
         break
     print(f'{str(int(hour)+9)}시 {min}분 {sec}초')
 
-#매크로 진행
+driver.refresh()
 
+#매크로 진행
 agree = driver.find_element_by_xpath('//*[@id="posFrm"]/div[2]/button')
 agree.click()
 
