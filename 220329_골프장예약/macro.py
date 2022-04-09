@@ -11,6 +11,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 import time
 import urllib.request
+import subprocess
+
+subprocess.Popen(r'C:/Program Files/Google/Chrome/Application/chrome.exe --remote-debugging-port=9222 --user-data-dir="C:/chrometemp"') # 디버거 크롬 구동
 
 
 #설정을 위한 변수
@@ -23,6 +26,8 @@ timeInput = input("원하시는 시간을 예시와 같은 형식으로 입력�
 server = 'https://www.sunvalley.co.kr/member/login?returnURL=/reservation/golf'
 options = webdriver.ChromeOptions()
 options.add_argument('--blink-settings=imagesEnabled=false')
+options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)")
 caps = DesiredCapabilities().CHROME
 caps["pageLoadStrategy"] = "none" 
 URL = 'https://www.sunvalley.co.kr/member/login?returnURL=/reservation/golf'
@@ -57,6 +62,8 @@ userpassword.send_keys('2347812')
 #    print(f'{str(int(hour)+9)}시 {min}분 {sec}초')
 
 
+time.sleep(10)
+
 #매크로 진행
 driver.refresh()
 
@@ -66,3 +73,4 @@ driver.execute_script("golfConfirm('{}','{}','1','{}','{}','18홀','','','FEEC92
 
 
 
+time.sleep(10000)
