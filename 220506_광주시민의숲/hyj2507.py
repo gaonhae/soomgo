@@ -15,11 +15,11 @@ import urllib.request
 
 
 #유저 입력 (날짜, 캠핑존, 자리, 기간, 소인, 대인)
-userdate = input('예약을 원하시는 월을 입력해주세요 (ex. 6월의 경우 06, 11월의 경우 11) : ')
-userwhere = input('원하시는 날짜의 좌표를 입력해주세요 (ex. 2022년 5월 18일의 경우 4,3) : ')
-usercarornormal = input('자동차야영장을 원하실 경우 1, 일반야영장을 원하실 경우 2를 입력해주세요. : ')
-usersite = input('예약을 원하시는 자리의 번호를 적어주세요 (ex. 44) : ')
-usertime = input('몇 박을 예약하실 건지 입력해주세요 (1박 2일의 경우 1, 2박 3일은 2 입력) : ')
+userdate = input('\n예약을 원하시는 월을 입력해주세요 (ex. 6월의 경우 06, 11월의 경우 11) : ')
+userwhere = input('\n원하시는 날짜의 좌표를 입력해주세요 (ex. 2022년 5월 18일의 경우 4,3) : ')
+usercarornormal = input('\n자동차야영장을 원하실 경우 1, 일반야영장을 원하실 경우 2를 입력해주세요. : ')
+usersite = input('\n예약을 원하시는 자리의 번호를 적어주세요 (ex. 44) : ')
+usertime = input('\n몇 박을 예약하실 건지 입력해주세요 (1박 2일의 경우 1, 2박 3일은 2 입력) : ')
 
 #브라우저 설정
 options = webdriver.ChromeOptions()

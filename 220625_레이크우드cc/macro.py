@@ -16,18 +16,18 @@ import urllib.request
 import os
 
 #유저 입력 (날짜, 캠핑존, 자리, 기간, 소인, 대인)
-# userMonth = input('\n예약을 원하시는 월을 입력해주세요 (ex. 6월의 경우 6, 11월의 경우 11) : ')
-# userDate = input('\n원하시는 날짜의 좌표를 입력해주세요 (ex. 2022년 6월 22일의 경우 4,4) : ')
-# print()
-# print("     1 : 06:00 ~ 08:00")
-# print("     2 : 08:00 ~ 10:00")
-# print("     3 : 10:00 ~ 12:00")
-# print("     4 : 12:00 ~ 14:00")
-# print("     5 : 14:00 ~ 16:00")
-# print("     6 : 16:00 ~ 18:00")
-# print("     7 : 18:00 ~ 20:00")
-# print("     8 : 20:00 ~ 22:00")
-# userTime = input('\n예약을 원하시는 시간의 번호를 입력해주세요. : ')
+userMonth = input('\n예약을 원하시는 월을 입력해주세요 (ex. 6월의 경우 6, 11월의 경우 11) : ')
+userDate = input('\n원하시는 날짜의 좌표를 입력해주세요 (ex. 2022년 6월 22일의 경우 4,4) : ')
+print()
+print("     1 : 06:00 ~ 08:00")
+print("     2 : 08:00 ~ 10:00")
+print("     3 : 10:00 ~ 12:00")
+print("     4 : 12:00 ~ 14:00")
+print("     5 : 14:00 ~ 16:00")
+print("     6 : 16:00 ~ 18:00")
+print("     7 : 18:00 ~ 20:00")
+print("     8 : 20:00 ~ 22:00")
+userTime = input('\n예약을 원하시는 시간의 번호를 입력해주세요. : ')
 
 #브라우저 설정
 options = webdriver.ChromeOptions()
@@ -41,8 +41,7 @@ URL = "https://lakewood.co.kr/reservation/golf"
 # URL = "https://online.igangdong.or.kr/rent/sports_rent_month_real.asp?SITE_CD=10017&PART_CD=1001&PLACE_CD=1005&d=m&F_Year=2022&F_Month=" + userMonth+ "&F_Day=21"
 
 #입력정보편집
-# x = userDate[0] 
-# y = userDate[2]
+
 
 
 #브라우저 실행
@@ -51,9 +50,10 @@ driver.get(url=URL)
 driver.implicitly_wait(time_to_wait=1000)
 
 #로그인 후 사전 진입
-driver.find_element_by_xpath('/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[6]/td/form/table/tbody/tr/td[2]/table/tbody/tr[3]/td[1]/table/tbody/tr[1]/td[2]/input').send_keys("gaonhae")#아이디 입력
-driver.find_element_by_xpath('/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[6]/td/form/table/tbody/tr/td[2]/table/tbody/tr[3]/td[1]/table/tbody/tr[3]/td[2]/input').send_keys("aqlalf3847!!")#비밀번호 입력
-driver.find_element_by_xpath('/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[6]/td/form/table/tbody/tr/td[2]/table/tbody/tr[3]/td[2]/a/img').click()#로그인 버튼 누르기
+driver.find_element_by_xpath('//*[@id="usrId"]').send_keys("wsmed")#아이디 입력
+driver.find_element_by_xpath('//*[@id="usrPwd"]').send_keys("3379")#비밀번호 입력
+driver.find_element_by_xpath('//*[@id="fnLogin"]').click()#로그인 버튼 누르기
+Alert(driver).accept()#유재훈님 환영합니다
 driver.find_element_by_xpath('/html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[3]/table/tbody/tr/td[6]/a/img').click()#대관신청 누르기
 driver.find_element_by_xpath('//*[@id="agree1"]').click()#동의 누르기
 driver.find_element_by_xpath('/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[4]/td/form/div/table/tbody/tr[3]/td[2]/button').click()#확인 누르기
