@@ -1,0 +1,2 @@
+/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[4]/td/form/table/tbody/tr[2]/td[4]/select
+/html/body/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/table/tbody/tr[2]/td/table/tbody/tr[4]/td/form/table/tbody/tr[2]/td[4]/select
